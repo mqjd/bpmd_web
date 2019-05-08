@@ -1,6 +1,6 @@
 <template>
   <el-container class="main-layout">
-    <el-aside class="main-side">
+    <el-aside style="width:initial">
       <main-menu></main-menu>
     </el-aside>
     <el-container>
@@ -23,8 +23,5 @@ export default {
 <style lang="scss" scoped>
 .main-layout{
   @include full;
-  .main-side{
-    width: 200px!important;
-  }
 }
 </style>

@@ -4,8 +4,8 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import './app.scss'
 import App from './App.vue'
-import router from './router'
-import store from './store'
+import router from './router/router'
+import store from './model/store'
 import './registerServiceWorker'
 
 Vue.config.productionTip = false
