@@ -4,7 +4,7 @@
       <main-menu></main-menu>
     </el-aside>
     <el-container>
-      <el-header>Header</el-header>
+      <el-header class="header">Header</el-header>
       <el-main>
         <router-view/>
       </el-main>
@@ -23,5 +23,8 @@ export default {
 <style lang="scss" scoped>
 .main-layout{
   @include full;
+  .header{
+    border-bottom: 1px solid $border-color;
+  }
 }
 </style>

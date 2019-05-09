@@ -23,13 +23,13 @@ export const RouterMap = [
     component: MainLayout,
     children: [
       {
-        path: 'about',
-        name: 'about',
+        path: 'sheet',
+        name: 'sheet',
         meta: {
-          title: '组件1',
+          title: '表格',
           icon: 'el-icon-s-cooperation'
         },
-        component: () => import('@/views/About')
+        component: () => import('@/views/Sheet')
       }, {
         path: 'home',
         name: 'home',
