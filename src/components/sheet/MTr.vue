@@ -1,5 +1,6 @@
 <template>
   <tr class="m-tr">
+    <td :style="{height:height + 'px'}"></td>
     <m-td
       v-for="item in options"
       :key="item.key"
@@ -19,12 +20,13 @@ export default {
     options: {
       type: Array,
       required: true
+    },
+    height: {
+      type: Number,
+      required: true
     }
   }
 }
 </script>
 <style lang="scss" scoped>
-.m-tr{
-  height: 30px;
-}
 </style>

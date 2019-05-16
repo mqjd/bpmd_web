@@ -17,6 +17,7 @@
 <script>
 import { mapGetters } from 'vuex'
 import MenuItem from '@/components/MenuItem.vue'
+
 export default {
   name: 'main-menu',
   components: {

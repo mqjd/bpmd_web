@@ -26,5 +26,8 @@ export default {
   .header{
     border-bottom: 1px solid $border-color;
   }
+  .el-container{
+    height: 100%;
+  }
 }
 </style>

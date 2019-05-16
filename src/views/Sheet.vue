@@ -11,13 +11,12 @@ export default {
   data () {
     return {
       options: {
-        rows: 5,
-        cols: 5
+        rows: 50,
+        cols: 26
       }
     }
   }
 }
 </script>
 <style lang="scss" scoped>
-
 </style>

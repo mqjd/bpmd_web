@@ -5,18 +5,22 @@
     cellspacing="0"
   >
     <colgroup>
+      <col width="0"/>
       <col
         v-for="(item, index) in options.rowWidths"
         :key="index"
         :width="item"
       />
     </colgroup>
-    <m-tr
-      v-for="item in options.data"
-      :key="item.key"
-      :options="item"
-    >
-    </m-tr>
+    <tbody>
+      <m-tr
+        v-for="(item, index) in options.data"
+        :key="item.key"
+        :options="item"
+        :height="options.rowHeights[index]"
+      >
+      </m-tr>
+    </tbody>
   </table>
 </template>
 <script>
@@ -37,7 +41,14 @@ export default {
 <style lang="scss" scoped>
 .m-table{
   border-collapse: collapse;
-  table-layout:fixed;
-  width: initial;
+  table-layout: fixed;
+  word-wrap: break-word;
+  word-break: break-all;
+  --webkit-touch-callout: none;
+  --webkit-user-select: none;
+  --khtml-user-select: none;
+  --moz-user-select: none;
+  --ms-user-select: none;
+  user-select: none;
 }
 </style>

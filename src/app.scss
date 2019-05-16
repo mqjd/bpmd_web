@@ -22,3 +22,23 @@ html, body{
 .el-main, .el-header{
   padding: initial;
 }
+
+.el-menu-item [class^=m-icon-], .el-submenu [class^=m-icon-] {
+  vertical-align: middle;
+  margin-right: 5px;
+  width: 24px;
+  text-align: center;
+  font-size: 24px;
+}
+.el-upload-list__item-name [class^=m-icon] {
+  height: 100%;
+  margin-right: 7px;
+  color: #909399;
+  line-height: inherit
+}
+.el-menu--collapse>.el-menu-item [class^=m-icon-],.el-menu--collapse>.el-submenu>.el-submenu__title [class^=m-icon-] {
+  margin: 0;
+  vertical-align: middle;
+  width: 24px;
+  text-align: center
+}
