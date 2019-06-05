@@ -7,6 +7,7 @@ import MNumber from './src/number.vue'
 import MRadio from './src/radio.vue'
 import MSelect from './src/select.vue'
 import MTextarea from './src/textarea.vue'
+import MMutiselect from './src/mutiselect'
 export default {
   name: 'MField',
   components: {
@@ -17,7 +18,8 @@ export default {
     MNumber,
     MRadio,
     MSelect,
-    MTextarea
+    MTextarea,
+    MMutiselect
   },
   render: function (createElement) {
     return createElement(
@@ -43,5 +45,3 @@ export default {
   }
 }
 </script>
-<style scoped>
-</style>

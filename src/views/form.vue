@@ -12,25 +12,7 @@ export default {
   data () {
     return {
       options: {
-        labelWidth: 80,
-        labelPosition: 'right',
-        fields: [{
-          type: 'input',
-          text: '输入框',
-          placeholder: '请输入',
-          allrow: false,
-          cols: 2,
-          required: true,
-          disabled: false
-        }, {
-          type: 'input',
-          text: '输入框',
-          placeholder: '请输入',
-          allrow: false,
-          cols: 2,
-          required: false,
-          disabled: false
-        }]
+        mode: 'design'
       }
     }
   }
