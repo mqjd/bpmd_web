@@ -16,7 +16,7 @@
 </template>
 <script>
 import { mapGetters } from 'vuex'
-import MenuItem from '@/components/MenuItem.vue'
+import MenuItem from '@/components/menu-item.vue'
 
 export default {
   name: 'main-menu',

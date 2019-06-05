@@ -36,6 +36,7 @@
                 <textarea
                   v-if="editCell"
                   v-model="editCell.text"
+                  :style="editCell.style"
                   ref="cellValue"
                   @mousedown.stop="blankFunc"
                 >
@@ -49,7 +50,7 @@
   </el-container>
 </template>
 <script>
-import MTable from './MTable'
+import MTable from './table'
 import _ from 'lodash'
 const abs = Math.abs
 const min = Math.min
@@ -79,6 +80,7 @@ export default {
       scrollLeft: 0,
       selectArea: null,
       selectArea_: null,
+      selectAreaAbs: null,
       editCell: null
     }
   },
@@ -91,6 +93,22 @@ export default {
     },
     scrollTop (val) {
       this.$refs.sheetOrdinal.$el.scrollTop = val
+    },
+    selectAreaAbs (val, oldVal) {
+      if (oldVal) {
+        for (let i = oldVal.x1; i <= oldVal.x2; i++) {
+          this.sheetTitle.data[0][i].style['background-color'] = '#eeeeee'
+        }
+        for (let i = oldVal.y1; i <= oldVal.y2; i++) {
+          this.sheetOrdinal.data[i][0].style['background-color'] = '#eeeeee'
+        }
+      }
+      for (let i = val.x1; i <= val.x2; i++) {
+        this.sheetTitle.data[0][i].style['background-color'] = '#b0bec5'
+      }
+      for (let i = val.y1; i <= val.y2; i++) {
+        this.sheetOrdinal.data[i][0].style['background-color'] = '#b0bec5'
+      }
     }
   },
   computed: {
@@ -216,6 +234,7 @@ export default {
         start: { x: cell.col, y: cell.row },
         end: { x: cell.col, y: cell.row }
       }
+      this.selectAreaAbs = this.parseSelectArea()
       document.body.addEventListener('mousemove', this.selecting)
       document.body.addEventListener('mouseup', this.selectEnd)
     },
@@ -227,6 +246,7 @@ export default {
       if (x !== x_ || y !== y_) {
         this.selectArea.end = { x: x_, y: y_ }
         const area = this.parseSelectArea()
+        this.selectAreaAbs = area
         const cell = this.findLeftTopCell(area.x2, area.y2)
         this.selectArea_ = {
           start: {
@@ -342,7 +362,7 @@ export default {
         this[type](data)
       }
     },
-    align (data) {
+    style (data) {
       if (this.selectArea_) {
         const { start, end } = this.selectArea_
         let endCell = this.sheetBody.data[end.y][end.x]

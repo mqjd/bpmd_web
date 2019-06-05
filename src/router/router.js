@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import MainLayout from '@/views/MainLayout/MainLayout.vue'
+import MainLayout from '@/views/main-layout/main-layout'
 
 Vue.use(Router)
 
@@ -29,15 +29,15 @@ export const RouterMap = [
           title: '表格',
           icon: 'el-icon-s-cooperation'
         },
-        component: () => import('@/views/Sheet')
+        component: () => import('@/views/sheet')
       }, {
-        path: 'home',
-        name: 'home',
+        path: 'form',
+        name: 'form',
         meta: {
-          title: '组件2',
+          title: '表单',
           icon: 'el-icon-s-cooperation'
         },
-        component: () => import('@/views/Home')
+        component: () => import('@/views/form')
       }
     ]
   }

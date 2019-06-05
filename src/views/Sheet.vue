@@ -2,7 +2,7 @@
   <m-sheet :options="options"></m-sheet>
 </template>
 <script>
-import MSheet from '@/components/sheet/MSheet'
+import MSheet from '@/components/sheet/sheet'
 export default {
   name: 'sheet',
   components: {

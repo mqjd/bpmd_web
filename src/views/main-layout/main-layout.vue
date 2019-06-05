@@ -12,7 +12,7 @@
   </el-container>
 </template>
 <script>
-import MainMenu from './MainMenu.vue'
+import MainMenu from './main-menu.vue'
 export default {
   name: 'main-layout',
   components: {

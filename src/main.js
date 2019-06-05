@@ -10,8 +10,7 @@ import store from './model/store'
 import './registerServiceWorker'
 
 Vue.config.productionTip = false
-Vue.use(ElementUI)
-
+Vue.use(ElementUI, { size: 'small' })
 new Vue({
   router,
   store,
